@@ -1,0 +1,71 @@
+{% load static %}
+<nav class="navbar navbar-expand-md navbar-light" style="background-color: lightgreen;font-size: large;padding: 2px;">
+  <!-- Brand -->
+  <a class="navbar-brand mx-3 " href='{% url 'hm' %}'>
+    <img
+      src="{% static 'images/icons/logo.jpg' %}"
+      class="rounded-circle"
+      width="50px"
+      height="50px"
+    />
+  </a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button
+    class="navbar-toggler mx-3 text-dark"
+    type="button"
+    data-toggle="collapse"
+    data-target="#collapsibleNavbar"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse my-1" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a
+          class="nav-link {% if request.path == '/' %}active text-info{% endif %}"
+          style="{% if request.path == '/' %}background-color:transparent {% endif %}"
+          href="{% url 'hm' %}"
+        >
+          Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link {% if request.path == '/abt/' %}active text-primary{% endif %}"
+          href="{% url 'ab' %}"
+          style="{% if request.path == '/abt/' %}background-color:transparent{% endif %} "
+        >
+          About
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link {% if request.path == '/cnt/' %}active text-primary{% endif %}"
+          href="{% url 'ct' %}"
+          style="{% if request.path == '/cnt/' %}background-color:transparent{% endif %} "
+        >
+          Contact
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link {% if request.path == '/reg/' %}active text-primary{% endif %}"
+          href="{% url 'rg' %}"
+          style="{% if request.path == '/reg/' %}background-color:transparent{% endif %} "
+        >
+          Register
+        </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto" style="margin-right: 120px">
+      <li class="nav-item">
+        <a class="nav-link {% if request.path == '/lgn/' %}active text-primary{% endif %}" 
+        href="{% url 'lg' %}"
+        style="{% if request.path == '/lgn/' %}background-color:transparent{% endif %} ">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>

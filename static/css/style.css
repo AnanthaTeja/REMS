@@ -1,0 +1,12 @@
+/* static/styles.css */
+.photo-container {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+.login-container {
+  float: right;
+  width: 35%;
+  align-items: center;
+}
